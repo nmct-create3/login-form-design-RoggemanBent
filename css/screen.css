@@ -7,7 +7,23 @@
 \*------------------------------------*/
 
 :root {
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-transparent: #66A4FF;
+    --global-color-x-transparent: #C1DAFF;
 
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7; 
+    --global-color-neutral-xx-light: #CACCD4;
+    --global-color-neutral-x-light: #B5B6C0;
+    --global-color-neutral-light: #A0A1AD;
+    --global-color-neutral: #8B8C9A;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4B4C60;
+    --global-color-neutral-xxx-dark: #35374D;
+    --global-color-neutral-xxxx-dark: #2A2C43;
 }
 
 /* CSS variables here */
@@ -167,18 +183,18 @@ hr {
 }
 
 a {
-    color: #3385FF;
+    color: var(--global-color-alpha);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: #7daffc;
+    color: var(--global-color-alpha);
 }
 
 a:hover,
 a:focus {
-    color: #0066ff;
+    color: var(--global-color-alpha-light);
 }
 
 /*
@@ -209,6 +225,8 @@ label {
 
 .o-row--login {
     /* stuff here to align the card */
+    display: flex;
+    align-items: center;
 }
 
 /* size modifiers */
@@ -573,7 +591,15 @@ label {
 */
 
 .c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
 
+.c-label--option {
+    margin-bottom: 0;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -635,6 +661,10 @@ label {
 
 .u-color-neutral-dark {
     color: Black;
+}
+
+.u-color-footer {
+    color: #757787;
 }
 
 /*
