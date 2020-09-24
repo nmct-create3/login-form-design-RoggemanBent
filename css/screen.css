@@ -22,15 +22,22 @@
     Global page styles + universal box-sizing:
 */
 
+/*
+    Zorg er voor dat de globale tekstkleur #20223a is.
+    Zorg dat de achtergrondkleur van de hele pagina #F5F6FA is.
+    Zorg er voor dat de selectie achtergrondkleur #3385FF is.
+    Zorg dat de linkkleur #3385FF is en kies een logische hover, focus en visited kleur.
+*/
+
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: Inter, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -46,14 +53,16 @@ html {
 * Customize the background color to match your design.
 */
 
+/*ctrl + D*/
+
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -158,18 +167,29 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #7daffc;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #0066ff;
+}
+
+/*
+    Elements: forms
+    ---
+    Default markup for forms
+*/
+
+input,
+label {
+    display: block;
 }
 
 /*------------------------------------*\
@@ -432,17 +452,90 @@ a:focus {
     Website main logo
 */
 
+.c-logo {
+    display: flex; /*df*/
+    justify-content: center; /*jcc, hoe gaat de child renderen*/
+    height: 24px;
+}
+
+.c-logo__inner-circle {
+    fill: #3385FF;
+}
+
+.c-logo__outer-circle {
+    fill: #1B4186;
+}
+
+.c-logo__text {
+    fill: #20223A;
+}
+
+.c-logo__symbol {
+    height: 100%;
+    display: block; /*db*/
+}
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
 
+.c-card {
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid #E2E3E7;
+    box-shadow: 0 0 4px 2px #E5E6EA;
+}
+
+.c-card__body {
+    padding: 0 24px;
+}
+
+.c-card__header {
+    padding: 24px 24px 0; /*staat niet in het doc*/
+}
+
+.c-card__title {
+    display: flex;
+    justify-content: center;
+}
+
+.c-card__footer {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #E2E3E7;
+    padding: 24px 24px 0;
+}
+
+@media screen and (min-width: 500px){
+    .c-card__header{
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+    
+    .c-card__body,
+    .c-card__header,
+    .c-card__footer{
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
 /*
     Component: Forms
     ---
     Everything form related here
 */
+
+.c-form-field {
+
+}
+
+.c-form-field--option {
+    display: flex;
+    align-items: center; /*verticaal aligneren*/
+}
 
 /*
     Component: Input
@@ -451,10 +544,26 @@ a:focus {
 */
 
 .c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
 
+    font-family: inherit; /* kijk naar de parent */
+    color: #20223a;
+    font-size: 16px;
+    line-height: 24px;
+    
+    width: 100%;
+    border: 1px solid #E2E3E7;
+    border-radius: 3px;
+
+    padding: 11px 18px;
 }
 
 .c-input:focus {
+    border-color: #3385FF;
+    box-shadow: 0 0 2px 3px #C1DAFF;
 }
 
 /*
@@ -480,19 +589,30 @@ a:focus {
 */
 
 .c-button {
-
+    background-color: #3385FF;
+    font-size: 16px;
+    font-weight: 600;
+    border :1px solid #2E77E6;
+    border-radius: 3px;
+    color: #FFFFFF;
+    line-height: 20px;
+    padding: 13px 12px;
+    width: 100%;
 }
 
 .c-button:hover {
-
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    border :1px solid #2E77E6;
+    border-radius: 3px;
+    background-color: #2E77E6;
+    box-shadow: 0 0 4px 2px #3385FFfd;
 }
 
 .c-button:active {
-
+    background-color: #3385FF;
 }
 
 .c-button--block {
